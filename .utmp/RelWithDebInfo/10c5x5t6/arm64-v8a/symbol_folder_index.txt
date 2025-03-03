@@ -1,0 +1,1 @@
+C:\Users\leotr\E-artsup\cours E-artsup\Annee 2\Csharp\MobileGameWorkshop2025\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\10c5x5t6\obj\arm64-v8a
