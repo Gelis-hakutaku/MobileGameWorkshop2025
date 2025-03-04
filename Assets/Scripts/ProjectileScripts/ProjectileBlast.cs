@@ -10,11 +10,12 @@ public class ProjectileBlast : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //projette au loin tous les objets pris dans l'explosion sauf lui-même
         foreach (Collider hit in Physics.OverlapSphere(transform.position, blastRadius))
         {
             if (hit.GetComponent<Rigidbody>() && hit != this.gameObject)
             {
-                hit.GetComponent<Rigidbody>().AddForce((hit.transform.position - transform.position) * blastForce);
+                hit.GetComponent<Rigidbody>().AddForce((hit.transform.position - transform.position) * blastForce); 
             }
         }
         Destroy(this.gameObject);
