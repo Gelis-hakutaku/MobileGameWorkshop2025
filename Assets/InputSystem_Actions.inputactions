@@ -31,7 +31,7 @@
                     "path": "<Touchscreen>/touch*/Press",
                     "interactions": "Tap",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Touch",
                     "action": "Tap",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -42,7 +42,7 @@
                     "path": "<Touchscreen>/delta/x",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Touch",
                     "action": "SwipeX",
                     "isComposite": false,
                     "isPartOfComposite": false
