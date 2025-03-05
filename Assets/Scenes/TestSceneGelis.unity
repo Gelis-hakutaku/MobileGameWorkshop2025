@@ -201,7 +201,6 @@ GameObject:
   - component: {fileID: 90802701}
   - component: {fileID: 90802700}
   - component: {fileID: 90802699}
-  - component: {fileID: 90802698}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Flammable
@@ -209,19 +208,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &90802698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90802697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 90802701}
 --- !u!54 &90802699
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -472,7 +458,6 @@ GameObject:
   - component: {fileID: 197784311}
   - component: {fileID: 197784310}
   - component: {fileID: 197784309}
-  - component: {fileID: 197784308}
   m_Layer: 0
   m_Name: Cube (13)
   m_TagString: Flammable
@@ -480,19 +465,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &197784308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197784307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 197784311}
 --- !u!54 &197784309
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -622,7 +594,6 @@ GameObject:
   - component: {fileID: 234710136}
   - component: {fileID: 234710135}
   - component: {fileID: 234710134}
-  - component: {fileID: 234710133}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Flammable
@@ -630,19 +601,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &234710133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234710132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 234710136}
 --- !u!54 &234710134
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -883,7 +841,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 448f679cfb2d5784ebc48402f7519b76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -941,7 +899,6 @@ GameObject:
   - component: {fileID: 425442904}
   - component: {fileID: 425442903}
   - component: {fileID: 425442902}
-  - component: {fileID: 425442901}
   m_Layer: 0
   m_Name: Cube (9)
   m_TagString: Flammable
@@ -949,19 +906,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &425442901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425442900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 425442904}
 --- !u!54 &425442902
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1078,128 +1022,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 89.735, z: 0}
---- !u!1 &691721153
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 691721158}
-  - component: {fileID: 691721157}
-  - component: {fileID: 691721156}
-  - component: {fileID: 691721155}
-  - component: {fileID: 691721154}
-  m_Layer: 0
-  m_Name: Cube (14)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &691721154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691721153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 691721156}
---- !u!65 &691721155
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691721153}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &691721156
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691721153}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 0d32fb905519b5a4faa0c012eae2cc9d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &691721157
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691721153}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &691721158
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691721153}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.27, y: 1.5, z: 0}
-  m_LocalScale: {x: 1, y: 0.70932, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &724513287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1035,6 @@ GameObject:
   - component: {fileID: 724513291}
   - component: {fileID: 724513290}
   - component: {fileID: 724513289}
-  - component: {fileID: 724513288}
   m_Layer: 0
   m_Name: Cube (15)
   m_TagString: Flammable
@@ -1221,19 +1042,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &724513288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724513287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 724513291}
 --- !u!54 &724513289
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1525,7 +1333,7 @@ Transform:
   m_GameObject: {fileID: 803445562}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: 5.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1605,7 +1413,6 @@ GameObject:
   - component: {fileID: 980434537}
   - component: {fileID: 980434536}
   - component: {fileID: 980434535}
-  - component: {fileID: 980434534}
   m_Layer: 0
   m_Name: Cube (16)
   m_TagString: Flammable
@@ -1613,19 +1420,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &980434534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980434533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 980434536}
 --- !u!65 &980434535
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1670,7 +1464,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0d32fb905519b5a4faa0c012eae2cc9d, type: 2}
+  - {fileID: 2100000, guid: 448f679cfb2d5784ebc48402f7519b76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1728,7 +1522,6 @@ GameObject:
   - component: {fileID: 989782193}
   - component: {fileID: 989782192}
   - component: {fileID: 989782191}
-  - component: {fileID: 989782190}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Flammable
@@ -1736,19 +1529,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &989782190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989782189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 989782193}
 --- !u!54 &989782191
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1934,7 +1714,6 @@ GameObject:
   - component: {fileID: 1118869957}
   - component: {fileID: 1118869956}
   - component: {fileID: 1118869955}
-  - component: {fileID: 1118869954}
   m_Layer: 0
   m_Name: Cube (12)
   m_TagString: Flammable
@@ -1942,19 +1721,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1118869954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1118869953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 1118869956}
 --- !u!65 &1118869955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1999,7 +1765,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0d32fb905519b5a4faa0c012eae2cc9d, type: 2}
+  - {fileID: 2100000, guid: 448f679cfb2d5784ebc48402f7519b76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2057,7 +1823,6 @@ GameObject:
   - component: {fileID: 1202776261}
   - component: {fileID: 1202776260}
   - component: {fileID: 1202776259}
-  - component: {fileID: 1202776258}
   m_Layer: 0
   m_Name: Cube (11)
   m_TagString: Flammable
@@ -2065,19 +1830,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1202776258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202776257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 1202776261}
 --- !u!54 &1202776259
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2207,7 +1959,6 @@ GameObject:
   - component: {fileID: 1234223749}
   - component: {fileID: 1234223748}
   - component: {fileID: 1234223747}
-  - component: {fileID: 1234223746}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Flammable
@@ -2215,19 +1966,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1234223746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234223745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 1234223749}
 --- !u!54 &1234223747
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2357,7 +2095,6 @@ GameObject:
   - component: {fileID: 1246033710}
   - component: {fileID: 1246033709}
   - component: {fileID: 1246033708}
-  - component: {fileID: 1246033707}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Flammable
@@ -2365,19 +2102,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1246033707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246033706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 1246033710}
 --- !u!54 &1246033708
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2507,7 +2231,6 @@ GameObject:
   - component: {fileID: 1305181168}
   - component: {fileID: 1305181167}
   - component: {fileID: 1305181166}
-  - component: {fileID: 1305181165}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Flammable
@@ -2515,19 +2238,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1305181165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1305181164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 1305181168}
 --- !u!54 &1305181166
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2766,7 +2476,6 @@ GameObject:
   - component: {fileID: 1548153241}
   - component: {fileID: 1548153240}
   - component: {fileID: 1548153239}
-  - component: {fileID: 1548153238}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Flammable
@@ -2774,19 +2483,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1548153238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548153237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 1548153241}
 --- !u!54 &1548153239
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2916,7 +2612,6 @@ GameObject:
   - component: {fileID: 1611430774}
   - component: {fileID: 1611430773}
   - component: {fileID: 1611430772}
-  - component: {fileID: 1611430771}
   m_Layer: 0
   m_Name: Cube (10)
   m_TagString: Flammable
@@ -2924,19 +2619,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1611430771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1611430770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 1611430774}
 --- !u!54 &1611430772
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3066,7 +2748,6 @@ GameObject:
   - component: {fileID: 1687760509}
   - component: {fileID: 1687760508}
   - component: {fileID: 1687760507}
-  - component: {fileID: 1687760506}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Flammable
@@ -3074,19 +2755,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1687760506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687760505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 1687760509}
 --- !u!54 &1687760507
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3268,7 +2936,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 448f679cfb2d5784ebc48402f7519b76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3375,7 +3043,6 @@ GameObject:
   - component: {fileID: 1974839741}
   - component: {fileID: 1974839740}
   - component: {fileID: 1974839739}
-  - component: {fileID: 1974839738}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Flammable
@@ -3383,19 +3050,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1974839738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974839737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRenderer: {fileID: 1974839741}
 --- !u!54 &1974839739
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3654,7 +3308,6 @@ SceneRoots:
   - {fileID: 90802703}
   - {fileID: 1118869958}
   - {fileID: 980434538}
-  - {fileID: 691721158}
   - {fileID: 1974839743}
   - {fileID: 989782195}
   - {fileID: 1548153243}
