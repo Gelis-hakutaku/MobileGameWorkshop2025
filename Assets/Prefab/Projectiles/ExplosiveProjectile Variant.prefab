@@ -91,5 +91,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collider: {fileID: 5268376482541751662}
+  explosionVFX: {fileID: 1790474176956632911, guid: 9e5657ae59188ce47a36491aa16a8f6b, type: 3}
   blastRadius: 5
-  blastForce: 700
+  blastForce: 150
+  cameraShakeDuration: 0.5
+  cameraShakeIntensity: 0.2

@@ -59,5 +59,27 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8968618564764182313, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1344537982456475286}
   m_SourcePrefab: {fileID: 100100000, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}
+--- !u!1 &177985779084473203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8968618564764182313, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}
+  m_PrefabInstance: {fileID: 9083402070426948698}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1344537982456475286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177985779084473203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57adfa9e022c87a4ea44078435d14cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burningMat: {fileID: 2100000, guid: e23bb0ba558d67b4fb4b6eb94b053d62, type: 2}
+  burningParticles: {fileID: 7837410041767060773, guid: d1f766c8a3f62a64fa0160d6cc3f1eeb, type: 3}
