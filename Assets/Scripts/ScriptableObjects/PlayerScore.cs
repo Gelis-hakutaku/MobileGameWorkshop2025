@@ -11,4 +11,9 @@ public class PlayerScore : ScriptableObject
         get => _score;
         set => _score = value;
     }
+
+    void ResetScore()
+    {
+        _score = 0;
+    }
 }
