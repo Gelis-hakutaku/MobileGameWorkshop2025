@@ -9,7 +9,6 @@ public class PlatformeTest2 : MonoBehaviour
     private void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, PatrouillePoints[valeurs].transform.position, speed * Time.deltaTime);
-        transform.LookAt(PatrouillePoints[valeurs].transform);
         if (Vector3.Distance(PatrouillePoints[valeurs].transform.position, transform.position) < 0.1)
         {
             if (valeurs > 2)
