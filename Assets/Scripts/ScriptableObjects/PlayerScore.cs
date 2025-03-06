@@ -18,7 +18,7 @@ public class PlayerScore : ScriptableObject
         set => _score = value;
     }
 
-    public int[] Hishscores
+    public int[] Highscores
     {
         get => _highscores;
         set => _highscores = value;
