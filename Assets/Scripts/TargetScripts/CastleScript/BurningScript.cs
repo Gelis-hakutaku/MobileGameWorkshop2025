@@ -1,11 +1,25 @@
+using System.Collections;
 using UnityEngine;
 
-//CE SCRIPT SERT DE DÉBUG ACTUELLEMENT ET DOIT ÊTRE MODIFIÉ
+
 public class BurningScript : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer mRenderer;
-    public void Burn()
+    float timeToburn = 5;
+
+    private void Start()
     {
-        mRenderer.material.color = Color.red;
+        StartCoroutine(Burn());
+    }
+
+    IEnumerator Burn()
+    {
+        yield return new WaitForSeconds(timeToburn);
+
+        transform.GetChild(0).GetComponent<ParticleSystem>().Stop();
+        transform.GetChild(0).parent = null;
+
+        Camera.main.GetComponent<CameraShake>().ShakeCamera(.2f, .05f);
+
+        Destroy(gameObject);
     }
 }
