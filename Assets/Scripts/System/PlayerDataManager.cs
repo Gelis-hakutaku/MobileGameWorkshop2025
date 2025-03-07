@@ -8,4 +8,10 @@ public class PlayerDataManager : MonoBehaviour
     {
         JsonUtility.ToJson(_playerScore.Highscores);
     }
+
+    public void LoadPlayerData()
+    {
+        _playerScore.Initialize();
+        JsonUtility.FromJson<int>(_playerScore.Highscores.ToString());
+    }
 }
