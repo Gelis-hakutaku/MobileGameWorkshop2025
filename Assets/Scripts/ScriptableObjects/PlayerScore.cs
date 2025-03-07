@@ -11,6 +11,7 @@ public class PlayerScore : ScriptableObject
 
     private int _score;
     private int[] _highscores;
+    private bool[] _isLevelLocked;
 
     public int Score
     {
@@ -24,11 +25,18 @@ public class PlayerScore : ScriptableObject
         set => _highscores = value;
     }
 
+    public bool[] IsLevelLocked
+    {
+        get => _isLevelLocked;
+        set => _isLevelLocked = value;
+    }
+
     public void Initialize()
     {
         _maxLevel = SceneManager.sceneCountInBuildSettings - 1;
         _score = 0;
         _highscores = new int[_maxLevel];
+        _isLevelLocked = new bool[_maxLevel];
     }
 
     public void ResetScore()
