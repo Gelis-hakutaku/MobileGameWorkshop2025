@@ -55,7 +55,7 @@ PrefabInstance:
     - target: {fileID: 7837410041767060773, guid: d1f766c8a3f62a64fa0160d6cc3f1eeb, type: 3}
       propertyPath: ShapeModule.m_Mesh
       value: 
-      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: 6461297695846733525, guid: 71cf6863aadab654bbf008e53f38baac, type: 3}
     - target: {fileID: 7837410041767060773, guid: d1f766c8a3f62a64fa0160d6cc3f1eeb, type: 3}
       propertyPath: CollisionModule.enabled
       value: 0
