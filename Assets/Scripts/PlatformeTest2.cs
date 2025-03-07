@@ -5,6 +5,7 @@ public class PlatformeTest2 : MonoBehaviour
     public float speed = 0;
     public int valeurs = 0;
     public GameObject[] PatrouillePoints;
+    [SerializeField] private GameObject cubeTNT;
 
     private void Update()
     {
@@ -18,6 +19,18 @@ public class PlatformeTest2 : MonoBehaviour
             else
                 valeurs++;
             Debug.Log(valeurs);
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.gameObject.name == "TNT")
+        {
+            collision.transform.SetParent(transform);
+        }
+        else
+        {
+            cubeTNT.transform.parent = null;
+            Destroy(gameObject);
         }
     }
 }
