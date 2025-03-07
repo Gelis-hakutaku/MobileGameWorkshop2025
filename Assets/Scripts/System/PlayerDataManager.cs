@@ -6,7 +6,6 @@ public class PlayerDataManager : MonoBehaviour
     [SerializeField] private PlayerScore _playerScore;
 
     private string Savepath => Application.persistentDataPath + "/playerData.json";
-    private PlayerData _playerData;
 
     public void SavePlayerData()
     {
@@ -16,7 +15,7 @@ public class PlayerDataManager : MonoBehaviour
             Highscores = _playerScore.Highscores,
             IsLevelLocked = _playerScore.IsLevelLocked
         };
-        string json = JsonUtility.ToJson(_playerData); // conversion de l'instance en string pour le json
+        string json = JsonUtility.ToJson(data); // conversion de l'instance en string pour le json
         File.WriteAllText(Savepath, json); // écriture du json
     }
 
