@@ -628,13 +628,14 @@ GameObject:
   - component: {fileID: 9123309114025342756}
   - component: {fileID: 4596764781606388387}
   - component: {fileID: 5305424471514927157}
+  - component: {fileID: 6185834747419440456}
   m_Layer: 5
   m_Name: LevelSelectionCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5289234710554504820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -644,7 +645,7 @@ RectTransform:
   m_GameObject: {fileID: 6194240259724538392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2224626736448979884}
@@ -731,6 +732,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47eef115670258b4d8c1f0d95416af28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6185834747419440456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194240259724538392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216f66004fe87d149b4798392589d004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6635460887585514540
@@ -854,13 +867,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5305424471514927157}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: OnButtonClick
-        m_Mode: 5
+      - m_Target: {fileID: 6185834747419440456}
+        m_TargetAssemblyTypeName: ChangeMenu, Assembly-CSharp
+        m_MethodName: GoToMenu
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
