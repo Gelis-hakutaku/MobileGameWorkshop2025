@@ -58,7 +58,7 @@
                 },
                 {
                     "name": "One Modifier",
-                    "id": "4fcf7f68-3402-419c-9cad-416638d22306",
+                    "id": "21a43c84-7f3b-4365-9dd9-fffe7d2db66a",
                     "path": "OneModifier",
                     "interactions": "",
                     "processors": "",
@@ -69,8 +69,8 @@
                 },
                 {
                     "name": "modifier",
-                    "id": "a1ea017d-8022-43fc-ba8f-3edb36329dd2",
-                    "path": "<Mouse>/leftButton",
+                    "id": "2ea2629b-5219-4863-8f29-153dc29803cd",
+                    "path": "<Touchscreen>/Press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -80,8 +80,8 @@
                 },
                 {
                     "name": "binding",
-                    "id": "2cfca4a5-1571-4d7b-bbeb-a6b7e53e99e8",
-                    "path": "<Mouse>/position",
+                    "id": "ad026a28-504f-4fa8-a359-57f520712b10",
+                    "path": "<Touchscreen>/primaryTouch/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
