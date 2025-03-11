@@ -7,5 +7,6 @@ public class SelectProjectile : MonoBehaviour
     public void changeProjectile(int newIndex)
     {
         _projectileIndex.Index = newIndex;
+        Debug.Log(_projectileIndex.Index);
     }
 }
