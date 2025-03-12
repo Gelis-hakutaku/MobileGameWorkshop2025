@@ -7,12 +7,12 @@
             "actions": [
                 {
                     "name": "Tap",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "78e7480d-dfbe-44c0-b43c-6e6a19b98c37",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "SwipeX",
@@ -37,7 +37,7 @@
                 {
                     "name": "",
                     "id": "e897f5b8-bcb6-4ae8-a838-1b390378426d",
-                    "path": "<Touchscreen>/touch*/Press",
+                    "path": "<Touchscreen>/primaryTouch/position",
                     "interactions": "Tap",
                     "processors": "",
                     "groups": ";Touch",

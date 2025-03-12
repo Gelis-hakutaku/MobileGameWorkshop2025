@@ -1,16 +1,32 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Reflection;
 using UnityEngine.Rendering;
 using static UnityEngine.GraphicsBuffer;
+using Unity.VisualScripting;
+using System.Collections;
 
 public class ShootScript : MonoBehaviour
 {
-    [SerializeField] private float _offset;
-    [SerializeField] private float _force;
+    [Header("ProjectileRelated")]
+    [SerializeField] private GameObject projectile;    
+    [SerializeField] private float reloadTime;    
+
+    [Header ("Force")]
+    [SerializeField] private float _force = 150;
+    [SerializeField] private float upwardOffset = 0.5f;
+
+    [Header("DeadZone")]
+    [SerializeField] private float maxZone = .38f;
+    [SerializeField] private float minZone = .05f;
+
+    private Transform childProjectile;
+
+    private Vector3 initLocalPosition;
+    private bool canAim;
 
     private float _mltp=(10.0f);
     private Vector2 _input;
-    private Vector3 _projBaseCoord;
     private Vector3 _screenPos;
     private Vector3 _worldPos;
     private Rigidbody rb;
@@ -19,21 +35,41 @@ public class ShootScript : MonoBehaviour
     private Vector3 _velocity;
     private float _temps;
 
-    private GameObject target;
-
     void Start()
     {
-        _projBaseCoord = new Vector3(0, -1, 0);
-        rb = GetComponent<Rigidbody>();
+        initLocalPosition = transform.localPosition;
+
+        AssignProjectile();
+
         rb.useGravity = false;
+    }
+
+    public void SpawnNewProjectile()
+    {
+        AssignProjectile();
+    }
+
+    public void AssignProjectile()
+    {
+        childProjectile = transform.GetChild(0);
+        rb = childProjectile.GetComponent<Rigidbody>();
     }
 
     public void MoveBall()
     {
         _screenPos = new Vector3(_input.x, _input.y, 5);
         _worldPos = Camera.main.ScreenToWorldPoint(_screenPos);
-        _worldPos.z = _projBaseCoord.z + ((_input.y / Screen.height) * _mltp) - _offset;
-        transform.position = _worldPos;
+
+        float pullValue = Mathf.Clamp(Mathf.InverseLerp(maxZone, minZone, _input.y / Screen.height), 0, 1);
+        Debug.Log(pullValue);
+
+        float distance = Mathf.Lerp(6, 2.72f, pullValue);
+        float height = Mathf.Lerp(0, 1.15f, pullValue);
+
+
+        transform.localPosition = new Vector3(_input.x / Screen.width -.5f,
+                                        initLocalPosition.y - height,
+                                        distance);
     }
 
     public void OnHold(InputAction.CallbackContext ctxt)
@@ -42,33 +78,60 @@ public class ShootScript : MonoBehaviour
 
         if (ctxt.started)
         {
-            MoveBall();
+            if ((_input.y / Screen.height) > maxZone)
+            {
+                canAim = false;
+                return;
+            }
+            else canAim = true;
 
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             rb.useGravity = false;
-
-            target = Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), transform.position, Quaternion.identity, transform.parent);
-            target.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
         }
 
         if (ctxt.canceled)
         {
-            rb.useGravity = true;
-            _direction = target.transform.position - transform.position;
-            _directionNormal = _direction.normalized;
+            if (!canAim) return;
 
-            float _distance = Vector3.Distance(target.transform.position, transform.position) * 50;
+            if(Vector3.Distance(initLocalPosition, transform.localPosition) < 1f)
+            {
+                transform.localPosition = initLocalPosition;
+                return;
+            }
 
-            rb.AddForce(_directionNormal * _force * _distance);
-
-            Destroy(target);
+            Shoot();
+            StartCoroutine(ShootDelay());
         }
+    }
+
+    void Shoot()
+    {
+        rb.useGravity = true;
+        _direction = initLocalPosition - transform.localPosition;
+        _direction.y = _direction.y + upwardOffset;
+        _directionNormal = _direction.normalized;
+
+        float _distance = Vector3.Distance(initLocalPosition, childProjectile.localPosition) * 30;
+
+        rb.AddForce(_directionNormal * _force * _distance, ForceMode.Impulse);
+
+        childProjectile.parent = null;
+        rb = null;
+        childProjectile = null;
+
+        transform.localPosition = initLocalPosition;
+        return;
+    }
+
+    IEnumerator ShootDelay()
+    {
+        yield return new WaitForSeconds(reloadTime);
     }
 
     void Update()
     {
-        if (_input != new Vector2(0.0f, 0.0f))
+        if (_input != new Vector2(0.0f, 0.0f) && canAim)
         {
             MoveBall();
         }
