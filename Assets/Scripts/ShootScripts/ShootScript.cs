@@ -1,13 +1,26 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Reflection;
 using UnityEngine.Rendering;
 using static UnityEngine.GraphicsBuffer;
+using Unity.VisualScripting;
+using System.Collections;
 
 public class ShootScript : MonoBehaviour
 {
-    [SerializeField] private float _force;
-    [SerializeField] private float maxPull = 5f;
-    [SerializeField] private float minPull = 1f;
+    [Header("ProjectileRelated")]
+    [SerializeField] private GameObject projectile;    
+    [SerializeField] private float reloadTime;    
+
+    [Header ("Force")]
+    [SerializeField] private float _force = 150;
+    [SerializeField] private float upwardOffset = 0.5f;
+
+    [Header("DeadZone")]
+    [SerializeField] private float maxZone = .38f;
+    [SerializeField] private float minZone = .05f;
+
+    private Transform childProjectile;
 
     private Vector3 initLocalPosition;
     private bool canAim;
@@ -25,21 +38,37 @@ public class ShootScript : MonoBehaviour
     void Start()
     {
         initLocalPosition = transform.localPosition;
-        rb = GetComponent<Rigidbody>();
+
+        AssignProjectile();
+
         rb.useGravity = false;
+    }
+
+    public void SpawnNewProjectile()
+    {
+        AssignProjectile();
+    }
+
+    public void AssignProjectile()
+    {
+        childProjectile = transform.GetChild(0);
+        rb = childProjectile.GetComponent<Rigidbody>();
     }
 
     public void MoveBall()
     {
         _screenPos = new Vector3(_input.x, _input.y, 5);
         _worldPos = Camera.main.ScreenToWorldPoint(_screenPos);
-        float distance = Mathf.Clamp(_input.y / Screen.height * _mltp, minPull, maxPull);
 
-        float invertDistance = (minPull + maxPull) - distance - 1;
-        Debug.Log(invertDistance);
+        float pullValue = Mathf.Clamp(Mathf.InverseLerp(maxZone, minZone, _input.y / Screen.height), 0, 1);
+        Debug.Log(pullValue);
+
+        float distance = Mathf.Lerp(6, 2.72f, pullValue);
+        float height = Mathf.Lerp(0, 1.15f, pullValue);
+
 
         transform.localPosition = new Vector3(_input.x / Screen.width -.5f,
-                                        initLocalPosition.y - .15f * invertDistance, //Conversion de la hauteur. Local > World 
+                                        initLocalPosition.y - height,
                                         distance);
     }
 
@@ -49,7 +78,12 @@ public class ShootScript : MonoBehaviour
 
         if (ctxt.started)
         {
-            CheckZone();
+            if ((_input.y / Screen.height) > maxZone)
+            {
+                canAim = false;
+                return;
+            }
+            else canAim = true;
 
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
@@ -66,24 +100,33 @@ public class ShootScript : MonoBehaviour
                 return;
             }
 
-            rb.useGravity = true;
-            _direction = initLocalPosition - transform.localPosition;
-            _directionNormal = _direction.normalized;
-
-            float _distance = Vector3.Distance(initLocalPosition, transform.localPosition) * 50;
-
-            rb.AddForce(_directionNormal * _force * _distance);
+            Shoot();
+            StartCoroutine(ShootDelay());
         }
     }
 
-    void CheckZone()
+    void Shoot()
     {
-        if ((_input.y / Screen.height) > .34f)
-        {
-            canAim = false;
-            return;
-        }
-        else canAim = true;
+        rb.useGravity = true;
+        _direction = initLocalPosition - transform.localPosition;
+        _direction.y = _direction.y + upwardOffset;
+        _directionNormal = _direction.normalized;
+
+        float _distance = Vector3.Distance(initLocalPosition, childProjectile.localPosition) * 30;
+
+        rb.AddForce(_directionNormal * _force * _distance, ForceMode.Impulse);
+
+        childProjectile.parent = null;
+        rb = null;
+        childProjectile = null;
+
+        transform.localPosition = initLocalPosition;
+        return;
+    }
+
+    IEnumerator ShootDelay()
+    {
+        yield return new WaitForSeconds(reloadTime);
     }
 
     void Update()

@@ -15,7 +15,7 @@ public class RotateObject : MonoBehaviour
     {
         if (ctxt.started)
         {
-            if (ctxt.ReadValue<Vector2>().y >.5f) canTurn = false;
+            if (ctxt.ReadValue<Vector2>().y / Screen.height < .38f) canTurn = false;
             else canTurn = true;
         }
     }
