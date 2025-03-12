@@ -1,0 +1,1 @@
+C:\Users\solit\Documents\unityproject\MobileGameWorkshop2025\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\6g3r6a2u\obj\armeabi-v7a
