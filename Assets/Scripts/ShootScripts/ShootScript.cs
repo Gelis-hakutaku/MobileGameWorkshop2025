@@ -21,6 +21,7 @@ public class ShootScript : MonoBehaviour
     [SerializeField] private float minZone = .05f;
 
     private Transform childProjectile;
+    private Trajectory trajectoryScript;
 
     private Vector3 initLocalPosition;
     private bool canAim;
@@ -33,11 +34,13 @@ public class ShootScript : MonoBehaviour
     private Vector3 _direction;
     private Vector3 _directionNormal;
     private Vector3 _velocity;
+    private float _distance;
     private float _temps;
 
     void Start()
     {
         initLocalPosition = transform.localPosition;
+        trajectoryScript = GetComponent<Trajectory>();
 
         AssignProjectile();
 
@@ -61,7 +64,6 @@ public class ShootScript : MonoBehaviour
         _worldPos = Camera.main.ScreenToWorldPoint(_screenPos);
 
         float pullValue = Mathf.Clamp(Mathf.InverseLerp(maxZone, minZone, _input.y / Screen.height), 0, 1);
-        Debug.Log(pullValue);
 
         float distance = Mathf.Lerp(6, 2.72f, pullValue);
         float height = Mathf.Lerp(0, 1.15f, pullValue);
@@ -108,11 +110,6 @@ public class ShootScript : MonoBehaviour
     void Shoot()
     {
         rb.useGravity = true;
-        _direction = initLocalPosition - transform.localPosition;
-        _direction.y = _direction.y + upwardOffset;
-        _directionNormal = _direction.normalized;
-
-        float _distance = Vector3.Distance(initLocalPosition, childProjectile.localPosition) * 30;
 
         rb.AddForce(_directionNormal * _force * _distance, ForceMode.Impulse);
 
@@ -129,11 +126,23 @@ public class ShootScript : MonoBehaviour
         yield return new WaitForSeconds(reloadTime);
     }
 
+    void CalculateForceAndDirection()
+    {
+        _distance = Vector3.Distance(initLocalPosition, childProjectile.localPosition) * 30;
+        _direction = initLocalPosition - transform.localPosition;
+        _direction.y = _direction.y + upwardOffset;
+        _directionNormal = _direction.normalized;
+    }
+
     void Update()
     {
         if (_input != new Vector2(0.0f, 0.0f) && canAim)
         {
             MoveBall();
+            CalculateForceAndDirection();
+            trajectoryScript.DrawTrajectory(_force, _directionNormal, _distance, rb.mass);
         }
+        else trajectoryScript.HideTrajectory();
     }
 }
+
