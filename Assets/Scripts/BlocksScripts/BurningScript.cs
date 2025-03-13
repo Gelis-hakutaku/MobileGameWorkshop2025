@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BurningScript : MonoBehaviour
 {
+    [SerializeField] private PlayerScore _playerScore;
+
     float timeToburn = 5;
 
     private void Start()
@@ -21,6 +23,8 @@ public class BurningScript : MonoBehaviour
         transform.GetChild(0).parent = null;
 
         Camera.main.GetComponent<CameraShake>().ShakeCamera(.2f, .05f);
+
+        _playerScore.AddPoints(_playerScore.BlockPoints);
 
         Destroy(gameObject);
     }

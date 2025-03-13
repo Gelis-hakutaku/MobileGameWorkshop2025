@@ -7,6 +7,11 @@ public class PlayerDataManager : MonoBehaviour
 
     private string Savepath => Application.persistentDataPath + "/playerData.json";
 
+    private void Start()
+    {
+        _playerScore.ResetScore();
+    }
+
     public void SavePlayerData()
     {
         // création de l'instance de PlayerData pour y stocker les données du scriptable object

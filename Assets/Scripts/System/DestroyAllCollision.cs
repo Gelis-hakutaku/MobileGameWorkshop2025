@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class DestroyAllCollision : MonoBehaviour
 {
-    [SerializeField] private Collider _collider; //Le collider doit être set en trigger
     [SerializeField] private PlayerScore _playerScore;
 
     private void OnTriggerEnter(Collider other)
