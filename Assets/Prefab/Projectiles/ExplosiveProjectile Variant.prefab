@@ -4841,6 +4841,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 482298317409380056, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}
+      propertyPath: m_Mass
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3663337252265539534, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4871,23 +4875,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7498540512435224470, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498540512435224470, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498540512435224470, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.52
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498540512435224470, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7498540512435224470, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 7498540512435224470, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -4899,7 +4903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7498540512435224470, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 7498540512435224470, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -4949,7 +4953,7 @@ MonoBehaviour:
   Collider: {fileID: 5268376482541751662}
   explosionVFX: {fileID: 1790474176956632911, guid: 9e5657ae59188ce47a36491aa16a8f6b, type: 3}
   blastRadius: 5
-  blastForce: 150
+  blastForce: 300
   cameraShakeDuration: 0.5
   cameraShakeIntensity: 0.2
 --- !u!4 &8433895575892896260 stripped

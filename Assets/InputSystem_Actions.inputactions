@@ -6,15 +6,6 @@
             "id": "df70fa95-8a34-4494-b137-73ab6b9c7d37",
             "actions": [
                 {
-                    "name": "Tap",
-                    "type": "Value",
-                    "id": "78e7480d-dfbe-44c0-b43c-6e6a19b98c37",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "SwipeX",
                     "type": "Value",
                     "id": "408e5b11-4f1c-4a03-860c-a5bb23f8b86c",
@@ -36,19 +27,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "e897f5b8-bcb6-4ae8-a838-1b390378426d",
-                    "path": "<Touchscreen>/primaryTouch/position",
-                    "interactions": "Tap",
-                    "processors": "",
-                    "groups": ";Touch",
-                    "action": "Tap",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "f2395839-0d98-44dd-a617-bab07c36455b",
-                    "path": "<Touchscreen>/delta/x",
+                    "path": "<Touchscreen>/primaryTouch/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touch",
