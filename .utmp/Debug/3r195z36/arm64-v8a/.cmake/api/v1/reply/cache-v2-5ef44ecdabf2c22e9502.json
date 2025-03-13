@@ -163,7 +163,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "RelWithDebInfo"
+			"value" : "Debug"
 		},
 		{
 			"name" : "CMAKE_CACHEFILE_DIR",
@@ -175,7 +175,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/leotr/E-artsup/cours E-artsup/Annee 2/Csharp/MobileGameWorkshop2025/.utmp/RelWithDebInfo/10c5x5t6/arm64-v8a"
+			"value" : "c:/Users/leotr/E-artsup/cours E-artsup/Annee 2/Csharp/MobileGameWorkshop2025/.utmp/Debug/3r195z36/arm64-v8a"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -248,6 +248,22 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmake/3.22.1/bin/ctest.exe"
+		},
+		{
+			"name" : "CMAKE_CXX_COMPILER",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "(This variable does not exist and should not be used)"
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -376,6 +392,22 @@
 			],
 			"type" : "STRING",
 			"value" : "-latomic -lm"
+		},
+		{
+			"name" : "CMAKE_C_COMPILER",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "(This variable does not exist and should not be used)"
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -647,7 +679,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "C:\\Users\\leotr\\E-artsup\\cours E-artsup\\Annee 2\\Csharp\\MobileGameWorkshop2025\\.utmp\\RelWithDebInfo\\10c5x5t6\\prefab\\arm64-v8a\\prefab"
+			"value" : "C:\\Users\\leotr\\E-artsup\\cours E-artsup\\Annee 2\\Csharp\\MobileGameWorkshop2025\\.utmp\\Debug\\3r195z36\\prefab\\arm64-v8a\\prefab"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -743,7 +775,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "C:\\Users\\leotr\\E-artsup\\cours E-artsup\\Annee 2\\Csharp\\MobileGameWorkshop2025\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\RelWithDebInfo\\10c5x5t6\\obj\\arm64-v8a"
+			"value" : "C:\\Users\\leotr\\E-artsup\\cours E-artsup\\Annee 2\\Csharp\\MobileGameWorkshop2025\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\Debug\\3r195z36\\obj\\arm64-v8a"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -1015,7 +1047,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "C:\\Users\\leotr\\E-artsup\\cours E-artsup\\Annee 2\\Csharp\\MobileGameWorkshop2025\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\RelWithDebInfo\\10c5x5t6\\obj\\arm64-v8a"
+			"value" : "C:\\Users\\leotr\\E-artsup\\cours E-artsup\\Annee 2\\Csharp\\MobileGameWorkshop2025\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\unityLibrary\\build\\intermediates\\cxx\\Debug\\3r195z36\\obj\\arm64-v8a"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1255,11 +1287,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "The CMake toolchain file"
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : "C:\\Program Files\\Unity\\Hub\\Editor\\6000.0.40f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\NDK\\build\\cmake\\android.toolchain.cmake"
+			"type" : "FILEPATH",
+			"value" : "C:/Program Files/Unity/Hub/Editor/6000.0.40f1/Editor/Data/PlaybackEngines/AndroidPlayer/NDK/build/cmake/android.toolchain.cmake"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1287,7 +1319,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/leotr/E-artsup/cours E-artsup/Annee 2/Csharp/MobileGameWorkshop2025/.utmp/RelWithDebInfo/10c5x5t6/arm64-v8a"
+			"value" : "C:/Users/leotr/E-artsup/cours E-artsup/Annee 2/Csharp/MobileGameWorkshop2025/.utmp/Debug/3r195z36/arm64-v8a"
 		},
 		{
 			"name" : "Unity_IS_TOP_LEVEL",
@@ -1323,7 +1355,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/leotr/E-artsup/cours E-artsup/Annee 2/Csharp/MobileGameWorkshop2025/.utmp/RelWithDebInfo/10c5x5t6/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/game-activity"
+			"value" : "C:/Users/leotr/E-artsup/cours E-artsup/Annee 2/Csharp/MobileGameWorkshop2025/.utmp/Debug/3r195z36/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/game-activity"
 		},
 		{
 			"name" : "game_BINARY_DIR",
@@ -1335,7 +1367,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/leotr/E-artsup/cours E-artsup/Annee 2/Csharp/MobileGameWorkshop2025/.utmp/RelWithDebInfo/10c5x5t6/arm64-v8a/GameActivity"
+			"value" : "C:/Users/leotr/E-artsup/cours E-artsup/Annee 2/Csharp/MobileGameWorkshop2025/.utmp/Debug/3r195z36/arm64-v8a/GameActivity"
 		},
 		{
 			"name" : "game_IS_TOP_LEVEL",
@@ -1383,7 +1415,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/leotr/E-artsup/cours E-artsup/Annee 2/Csharp/MobileGameWorkshop2025/.utmp/RelWithDebInfo/10c5x5t6/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/games-frame-pacing"
+			"value" : "C:/Users/leotr/E-artsup/cours E-artsup/Annee 2/Csharp/MobileGameWorkshop2025/.utmp/Debug/3r195z36/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/games-frame-pacing"
 		},
 		{
 			"name" : "swappywrapper_BINARY_DIR",
@@ -1395,7 +1427,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/leotr/E-artsup/cours E-artsup/Annee 2/Csharp/MobileGameWorkshop2025/.utmp/RelWithDebInfo/10c5x5t6/arm64-v8a/FramePacing"
+			"value" : "C:/Users/leotr/E-artsup/cours E-artsup/Annee 2/Csharp/MobileGameWorkshop2025/.utmp/Debug/3r195z36/arm64-v8a/FramePacing"
 		},
 		{
 			"name" : "swappywrapper_IS_TOP_LEVEL",
