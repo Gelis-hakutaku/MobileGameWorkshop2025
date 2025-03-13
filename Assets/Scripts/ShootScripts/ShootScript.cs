@@ -30,7 +30,6 @@ public class ShootScript : MonoBehaviour
     private bool canShoot = true;
     private bool canReload = true;
 
-    private float _mltp=(10.0f);
     private Vector2 _input;
     private Vector3 _screenPos;
     private Vector3 _worldPos;
@@ -40,6 +39,8 @@ public class ShootScript : MonoBehaviour
     private Vector3 _velocity;
     private float _distance;
     private float _temps;
+
+    public bool CanReload { get { return canReload; } set { canReload = value; } }
 
     void Start()
     {

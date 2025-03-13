@@ -12,11 +12,6 @@ public class RotateObject : MonoBehaviour
     private float rotationY;
     private Quaternion targetRotation;
 
-    public void checkTouchLocation(InputAction.CallbackContext ctxt)
-    {
-        
-    }
-
     //donne la force de rotation à l'objet en fonction du mouvement du doigt
     public void OnSwipe(InputAction.CallbackContext ctxt)
     {       
