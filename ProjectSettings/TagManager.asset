@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Flammable
+  - Block
+  - Knight
   layers:
   - Default
   - TransparentFX
@@ -12,7 +14,7 @@ TagManager:
   - Burning
   - Water
   - UI
-  - 
+  - Block
   - 
   - 
   - 

@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb2a28a744d09e429d04b384d45ec58, type: 3}
   m_Name: PlayerScore
   m_EditorClassIdentifier: 
-  _score: 0
+  _maxLevel: 3
+  _blockPoints: 100
+  _knightPoint: 500

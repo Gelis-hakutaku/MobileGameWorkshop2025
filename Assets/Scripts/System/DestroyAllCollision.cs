@@ -8,13 +8,11 @@ public class DestroyAllCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //script à éditer quand les objets de score seront créés
-        /*if (other.TryGetComponent<insérerClasseDeLaMortDesEnnemis>(out classe object))
+        //S'il 
+        if (other.gameObject.layer == 6)
           {
-                Object.FonctionDeScore();
-                _playerScore.Score += valeurDeScore;
+                _playerScore.AddPoints(_playerScore.BlockPoints);
           }
-        */
         Destroy(other.gameObject);
     }
 }

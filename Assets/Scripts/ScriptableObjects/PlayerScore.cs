@@ -7,7 +7,12 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "PlayerScore", menuName = "Scriptable Objects/PlayerScore")]
 public class PlayerScore : ScriptableObject
 {
+    [Header ("Level Management")]
     [SerializeField] int _maxLevel;
+
+    [Header("Points")]
+    [SerializeField] int _blockPoints;
+    [SerializeField] int _knightPoint;
 
     private int _score;
     private int[] _highscores;
@@ -25,6 +30,17 @@ public class PlayerScore : ScriptableObject
         set => _highscores = value;
     }
 
+    public int BlockPoints
+    {
+        get => _blockPoints;
+        set => _blockPoints = value;
+    }
+
+    public int KnightPoint
+    {
+        get => _knightPoint;
+        set => _knightPoint = value;
+    }
     public bool[] IsLevelLocked
     {
         get => _isLevelLocked;
@@ -42,6 +58,12 @@ public class PlayerScore : ScriptableObject
     public void ResetScore()
     {
         _score = 0;
+    }
+
+    public void AddPoints(int value)
+    {
+        Score += value;
+        Debug.Log(Score);
     }
 
     public void SetHighscore(int currentLevel)
