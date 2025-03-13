@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
-  reloadTime: 0
+  reloadTime: 5
   maxForce: 3
   minForce: 0.1
   upwardOffset: 0

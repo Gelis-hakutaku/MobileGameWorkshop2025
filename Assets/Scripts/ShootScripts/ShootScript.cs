@@ -9,8 +9,7 @@ using System.Collections;
 public class ShootScript : MonoBehaviour
 {
     [Header("ProjectileRelated")]
-    [SerializeField] private GameObject projectile;    
-    [SerializeField] private float reloadTime;    
+    public GameObject projectile;
 
     [Header ("Force")]
     [SerializeField] private float maxForce = 1;
@@ -19,14 +18,17 @@ public class ShootScript : MonoBehaviour
     private float _force;
 
     [Header("DeadZone")]
-    [SerializeField] private float maxZone = .38f;
+    [SerializeField] private float maxZone = .4f;
     [SerializeField] private float minZone = .05f;
 
+    private Vector3 spawnPosition;
     private Transform childProjectile;
     private Trajectory trajectoryScript;
 
     private Vector3 initLocalPosition;
     private bool canAim;
+    private bool canShoot = true;
+    private bool canReload = true;
 
     private float _mltp=(10.0f);
     private Vector2 _input;
@@ -52,6 +54,7 @@ public class ShootScript : MonoBehaviour
 
     public void SpawnNewProjectile()
     {
+        Instantiate(projectile, spawnPosition, Quaternion.identity, transform);
         AssignProjectile();
     }
 
@@ -59,6 +62,7 @@ public class ShootScript : MonoBehaviour
     {
         childProjectile = transform.GetChild(0);
         rb = childProjectile.GetComponent<Rigidbody>();
+        rb.useGravity = false;
     }
 
     public void MoveBall()
@@ -84,7 +88,7 @@ public class ShootScript : MonoBehaviour
 
         if (ctxt.started)
         {
-            if ((_input.y / Screen.height) > maxZone)
+            if (!clickOnBullet() || !canShoot)
             {
                 canAim = false;
                 return;
@@ -107,9 +111,27 @@ public class ShootScript : MonoBehaviour
             }
 
             Shoot();
-            StartCoroutine(ShootDelay());
+            StartCoroutine(ReloadProjectile(2f));
         }
     }
+
+    bool clickOnBullet()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(_input);
+        if (Physics.Raycast(ray, out RaycastHit hit, 1000f))
+        {
+            // Si l'objet touché a le tag "Player", on retourne true
+            if (hit.collider.CompareTag("Player"))
+            {
+                Debug.Log("Touchéé!");
+                return true;
+            }
+            else return false;
+        }
+
+        return false;
+    }
+
 
     void Shoot()
     {
@@ -125,10 +147,42 @@ public class ShootScript : MonoBehaviour
         return;
     }
 
-    IEnumerator ShootDelay()
+    public IEnumerator ReloadProjectile(float reloadTime)
     {
-        yield return new WaitForSeconds(reloadTime);
+        if (!canReload) yield return null;
+        else
+        {
+            canReload = false;
+            if (childProjectile != null) Destroy(childProjectile.gameObject);
+
+            canShoot = false;
+
+            yield return new WaitForSeconds(reloadTime);
+
+            SpawnNewProjectile();
+
+            float duration = 1f;
+            float elapsed = 0f;
+
+            Vector3 posA = new Vector3(0f, -3f, 1f);
+            Vector3 posB = new Vector3(0f, -1f, 0f);
+            while (elapsed < duration)
+            {
+                float easedT = 1 - Mathf.Pow(1 - elapsed / duration, 3);
+
+                childProjectile.transform.localPosition = Vector3.Lerp(posA, posB, easedT);
+
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            childProjectile.transform.localPosition = posB;
+
+            canShoot = true;
+            canReload = true;
+        }
     }
+
 
     void CalculateForceAndDirection()
     {

@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class SelectProjectile : MonoBehaviour
 {
-    [SerializeField] private ProjectileIndex _projectileIndex;
+    [SerializeField] private ShootScript shootScript;
 
-    public void changeProjectile(int newIndex)
+    public void changeProjectile(GameObject projectile)
     {
-        _projectileIndex.Index = newIndex;
-        Debug.Log(_projectileIndex.Index);
+        shootScript.projectile = projectile;
+        StartCoroutine(shootScript.ReloadProjectile(0f));
     }
 }

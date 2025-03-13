@@ -14,19 +14,12 @@ public class RotateObject : MonoBehaviour
 
     public void checkTouchLocation(InputAction.CallbackContext ctxt)
     {
-        Debug.Log("Checking");
-        if (ctxt.started)
-        {
-            if (ctxt.ReadValue<Vector2>().y / Screen.height < .38f) canTurn = false;
-            else canTurn = true;
-            Debug.Log("Clicked! And Can you turn? :         " + canTurn);
-        }
+        
     }
 
     //donne la force de rotation à l'objet en fonction du mouvement du doigt
     public void OnSwipe(InputAction.CallbackContext ctxt)
     {       
-        if (!canTurn) return;
         float deltaX = ctxt.ReadValue<Vector2>().x;
         rotationY += deltaX * rotationSpeed * Time.deltaTime;
         targetRotation = Quaternion.Euler(0, rotationY, 0);
@@ -35,7 +28,6 @@ public class RotateObject : MonoBehaviour
     //fait tourner l'objet avec une légère inertie
     private void Update()
     {
-        if(!canTurn) return;
 
         if (transform.rotation != targetRotation)
         {
