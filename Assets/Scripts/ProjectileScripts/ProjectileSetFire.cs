@@ -21,7 +21,6 @@ public class ProjectileSetFire : MonoBehaviour
 
             emission.rateOverTime = initParticleNumber;
 
-            shape.scale = col.transform.lossyScale;
             shape.rotation = col.transform.rotation.eulerAngles;
             shape.mesh = col.gameObject.GetComponent<MeshFilter>().mesh;
 
