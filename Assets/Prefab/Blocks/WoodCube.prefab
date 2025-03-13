@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5847373976789831425}
   - component: {fileID: 5131329009050936322}
   - component: {fileID: 1997693725631310954}
-  - component: {fileID: 4083071711715811883}
   m_Layer: 6
   m_Name: WoodCube
   m_TagString: Flammable
@@ -137,16 +136,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4083071711715811883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4047019020296514888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10372dda40cf8e144994deb596e5c070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerScore: {fileID: 11400000, guid: 8aa5871ddabd5b74e962f877600143f8, type: 2}
