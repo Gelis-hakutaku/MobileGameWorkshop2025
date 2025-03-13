@@ -13,17 +13,17 @@ public class Trajectory : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < _trajectorySteps; i++)
+        for (int i = _trajectorySteps; i >= 0; i--)
         {
             GameObject point = Instantiate(prefabObj, transform.position, Quaternion.identity);
 
-            Vector3 scale = point.transform.lossyScale;
-            float size = 1 / _trajectorySteps * i;
-            scale = new Vector3(size, size, size);
+            float size = Mathf.Lerp(.3f, 1f, (1f / _trajectorySteps * i));
+            point.transform.localScale = new Vector3(size, size, size);
 
-            point.SetActive(false); // On les désactive au début
+            point.SetActive(false);
             _trajectoryPoints.Add(point);
         }
+
     }
 
     public void HideTrajectory() // Fais dispraître les points
@@ -43,7 +43,7 @@ public class Trajectory : MonoBehaviour
 
     public void DrawTrajectory(float force, Vector3 _directionNormal, float distance, float mass) // Dessine la trajectoire
     {
-        for (int i = 0; i < _trajectorySteps; i++)
+        for (int i = 0; i <= _trajectorySteps; i++)
         {
             float time = i * _timeStep;
             Vector3 point = CalculateTrajectory(time, force, _directionNormal, distance, mass);

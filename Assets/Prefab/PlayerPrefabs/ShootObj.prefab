@@ -47,8 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
   reloadTime: 0
-  _force: 3
-  upwardOffset: 0.5
+  maxForce: 3
+  minForce: 0.1
+  upwardOffset: 0
   maxZone: 0.38
   minZone: 0.05
 --- !u!1 &5026872885511732360
