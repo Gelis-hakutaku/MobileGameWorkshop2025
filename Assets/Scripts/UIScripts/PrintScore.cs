@@ -6,7 +6,7 @@ public class PrintScore : MonoBehaviour
     [SerializeField] private PlayerScore _playerScore;
     [SerializeField] private TextMeshProUGUI _text;
 
-    void OnUpdate()
+    void OnEnable()
     {
         _text.text = _playerScore.Score.ToString();
     }

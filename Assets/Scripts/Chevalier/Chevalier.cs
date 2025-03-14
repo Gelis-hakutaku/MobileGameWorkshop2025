@@ -8,7 +8,6 @@ public class Chevalier : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _clip;
     [SerializeField] private ParticleSystem _particleSystem;
-    //[SerializeField] private ChevalierCount _chevalierCountScript;
     [SerializeField] private PlayerScore _playerScore;
 
     
@@ -20,6 +19,22 @@ public class Chevalier : MonoBehaviour
         _boxCollider = this.GetComponent<BoxCollider>();
         _meshRender = this.GetComponent<SpriteRenderer>();
         _audioSource.clip = _clip;
+        _playerScore.NbKnights += 1;
+    }
+
+    private void OnEnable()
+    {
+        _playerScore.OnAllKnightsDead += OnGameOver;
+    }
+
+    private void OnDisable()
+    {
+        _playerScore.OnAllKnightsDead -= OnGameOver;
+    }
+
+    private void OnGameOver()
+    {
+
     }
 
     void OnCollisionEnter(Collision collision)
@@ -40,6 +55,7 @@ public class Chevalier : MonoBehaviour
     IEnumerator WaitBeforeDeath()
     {
         yield return new WaitForSeconds(_clip.length);
+        _playerScore.NbKnights -= 1;
         Destroy(gameObject);
     }
 }

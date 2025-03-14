@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 6532513210665662156}
   - component: {fileID: 1570514768130458265}
   - component: {fileID: 5758220723670823834}
+  - component: {fileID: 7054677664103759381}
   m_Layer: 5
   m_Name: EndGameCanvas
   m_TagString: Untagged
@@ -405,6 +406,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47eef115670258b4d8c1f0d95416af28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7054677664103759381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156777618832996464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96326c31d9f820e44b56adf06f12ef8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerScore: {fileID: 11400000, guid: 8aa5871ddabd5b74e962f877600143f8, type: 2}
+  _text: {fileID: 7190352578991275161}
 --- !u!1 &5065659891369102206
 GameObject:
   m_ObjectHideFlags: 0
