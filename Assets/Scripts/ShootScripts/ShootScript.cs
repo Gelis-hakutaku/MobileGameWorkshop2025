@@ -10,12 +10,17 @@ public class ShootScript : MonoBehaviour
 {
     [Header("ProjectileRelated")]
     public GameObject projectile;
+    public SetSelectedProjectile buttonsScript;
 
     [Header ("Force")]
     [SerializeField] private float maxForce = 1;
     [SerializeField] private float minForce = .1f;
     [SerializeField] private float upwardOffset = 0.5f;
     private float _force;
+
+    [Header("Sound")]
+    [SerializeField] private AudioClip shoot;
+    private AudioSource audioS;
 
     [Header("DeadZone")]
     [SerializeField] private float maxZone = .4f;
@@ -24,6 +29,7 @@ public class ShootScript : MonoBehaviour
     private Vector3 spawnPosition;
     private Transform childProjectile;
     private Trajectory trajectoryScript;
+    private RotateObject rotationScript;
 
     private Vector3 initLocalPosition;
     private bool canAim;
@@ -40,13 +46,14 @@ public class ShootScript : MonoBehaviour
     private float _distance;
     private float _temps;
 
-    public bool CanReload { get { return canReload; } set { canReload = value; } }
 
     void Start()
     {
         initLocalPosition = transform.localPosition;
 
+        audioS = GetComponent<AudioSource>();
         trajectoryScript = GetComponent<Trajectory>();
+        rotationScript = transform.root.GetComponent<RotateObject>();
 
         AssignProjectile();
 
@@ -77,7 +84,7 @@ public class ShootScript : MonoBehaviour
         float height = Mathf.Lerp(0, 1.15f, pullValue);
         _force = Mathf.Lerp(minForce, maxForce, pullValue);
 
-
+        childProjectile.localPosition = Vector3.zero;
         transform.localPosition = new Vector3(_input.x / Screen.width -.5f,
                                         initLocalPosition.y - height,
                                         distance);
@@ -91,11 +98,14 @@ public class ShootScript : MonoBehaviour
         {
             if (!clickOnBullet() || !canShoot)
             {
+                rotationScript.canTurn = true;
                 canAim = false;
                 return;
             }
             else canAim = true;
 
+            rotationScript.canTurn = false;
+            buttonsScript.HideButtons();
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             rb.useGravity = false;
@@ -136,6 +146,7 @@ public class ShootScript : MonoBehaviour
 
     void Shoot()
     {
+        audioS.PlayOneShot(shoot);
         rb.useGravity = true;
 
         rb.AddForce(_directionNormal * _force * _distance, ForceMode.Impulse);
@@ -145,43 +156,39 @@ public class ShootScript : MonoBehaviour
         childProjectile = null;
 
         transform.localPosition = initLocalPosition;
+
         return;
     }
 
     public IEnumerator ReloadProjectile(float reloadTime)
     {
-        if (!canReload) yield return null;
-        else
+        if (childProjectile != null) Destroy(childProjectile.gameObject);
+
+        canShoot = false;
+
+        yield return new WaitForSeconds(reloadTime);
+
+        SpawnNewProjectile();
+        
+        float duration = 1f;
+        float elapsed = 0f;
+        
+        Vector3 posA = new Vector3(0f, -3f, 1f);
+        Vector3 posB = new Vector3(0f, -1f, 0f);
+        while (elapsed < duration)
         {
-            canReload = false;
-            if (childProjectile != null) Destroy(childProjectile.gameObject);
-
-            canShoot = false;
-
-            yield return new WaitForSeconds(reloadTime);
-
-            SpawnNewProjectile();
-
-            float duration = 1f;
-            float elapsed = 0f;
-
-            Vector3 posA = new Vector3(0f, -3f, 1f);
-            Vector3 posB = new Vector3(0f, -1f, 0f);
-            while (elapsed < duration)
-            {
-                float easedT = 1 - Mathf.Pow(1 - elapsed / duration, 3);
-
-                childProjectile.transform.localPosition = Vector3.Lerp(posA, posB, easedT);
-
-                elapsed += Time.deltaTime;
-                yield return null;
-            }
-
-            childProjectile.transform.localPosition = posB;
-
-            canShoot = true;
-            canReload = true;
+            float easedT = 1 - Mathf.Pow(1 - elapsed / duration, 3);
+            
+            childProjectile.transform.localPosition = Vector3.Lerp(posA, posB, easedT);
+            elapsed += Time.deltaTime;
+            yield return null;
         }
+
+        childProjectile.transform.localPosition = posB;
+
+        buttonsScript.ShowButtons();
+
+        canShoot = true;
     }
 
 

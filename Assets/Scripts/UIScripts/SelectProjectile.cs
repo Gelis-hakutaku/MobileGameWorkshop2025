@@ -11,7 +11,6 @@ public class SelectProjectile : MonoBehaviour
         if (cor != null)
         {
             StopCoroutine(cor);
-            shootScript.CanReload = true;
         }
         cor = StartCoroutine(shootScript.ReloadProjectile(0f));
     }

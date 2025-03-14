@@ -16,4 +16,20 @@ public class SetSelectedProjectile : MonoBehaviour
         SelectedButton.localScale = new Vector3(2.4f, 2.4f, 2.4f);
         SelectedButton.GetComponent<Image>().color = Color.white;
     }
+
+    public void ShowButtons()
+    {
+        foreach (RectTransform projButton in projectileButtons)
+        {
+            projButton.gameObject.SetActive(true);
+        }
+    }
+
+    public void HideButtons()
+    {
+        foreach (RectTransform projButton in projectileButtons)
+        {
+            projButton.gameObject.SetActive(false);
+        }
+    }
 }

@@ -2,9 +2,18 @@ using UnityEngine;
 
 public class ProjectileSetFire : MonoBehaviour
 {
+
+    private AudioSource audioS;
+    [SerializeField] private AudioClip fire;
+
     [SerializeField] private Material burningMat;
     [SerializeField] private ParticleSystem burningParticles;
     private int initParticleNumber = 400;
+
+    private void Start()
+    {
+        audioS = GetComponent<AudioSource>();
+    }
 
     private void OnCollisionEnter(Collision col)
     {
@@ -30,6 +39,11 @@ public class ProjectileSetFire : MonoBehaviour
         transform.GetChild(0).GetComponent<ParticleSystem>().Stop();
         transform.GetChild(0).parent = null;
 
-        Destroy(this.gameObject);
+        audioS.PlayOneShot(fire);
+
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        gameObject.GetComponent<SphereCollider>().enabled = false;
+
+        Destroy(this.gameObject, 3f);
     }
 }
