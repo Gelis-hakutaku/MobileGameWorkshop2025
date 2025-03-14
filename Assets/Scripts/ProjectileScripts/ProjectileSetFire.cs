@@ -4,6 +4,7 @@ public class ProjectileSetFire : MonoBehaviour
 {
     [SerializeField] private Material burningMat;
     [SerializeField] private ParticleSystem burningParticles;
+    [SerializeField] private PlayerScore _playerScore;
     private int initParticleNumber = 400;
 
     private void OnCollisionEnter(Collision col)
@@ -24,7 +25,7 @@ public class ProjectileSetFire : MonoBehaviour
             shape.rotation = col.transform.rotation.eulerAngles;
             shape.mesh = col.gameObject.GetComponent<MeshFilter>().mesh;
 
-            col.gameObject.AddComponent<BurningScript>();
+            col.gameObject.AddComponent<BurningScript>().Initialize(_playerScore);
         }
 
         transform.GetChild(0).GetComponent<ParticleSystem>().Stop();

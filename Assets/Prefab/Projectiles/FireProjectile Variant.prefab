@@ -196,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burningMat: {fileID: 2100000, guid: e23bb0ba558d67b4fb4b6eb94b053d62, type: 2}
   burningParticles: {fileID: 7837410041767060773, guid: d1f766c8a3f62a64fa0160d6cc3f1eeb, type: 3}
+  _playerScore: {fileID: 11400000, guid: 8aa5871ddabd5b74e962f877600143f8, type: 2}
 --- !u!4 &1593870555764435916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7498540512435224470, guid: 009a058e7b9bb914b84175375d33af2c, type: 3}

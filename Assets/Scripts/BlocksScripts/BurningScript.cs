@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BurningScript : MonoBehaviour
 {
-    [SerializeField] private PlayerScore _playerScore;
+    private PlayerScore _playerScore;
 
     float timeToburn = 5;
 
-    private void Start()
+    public void Initialize(PlayerScore playerscore)
     {
+        _playerScore = playerscore;
         StartCoroutine(Burn());
     }
 
