@@ -34,6 +34,7 @@ public class PlayerScore : ScriptableObject
         set 
         { 
             _nbKnights = value;
+            Debug.Log(value);
             if (NbKnights <= 0)
             {
                 OnAllKnightsDead?.Invoke();

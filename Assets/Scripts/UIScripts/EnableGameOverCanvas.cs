@@ -24,6 +24,7 @@ public class EnableGameOverCanvas : MonoBehaviour
 
     private void OnGameOver()
     {
+        Debug.Log("Game Over");
         StartCoroutine(WaitBeforeEnd());        
     }
 

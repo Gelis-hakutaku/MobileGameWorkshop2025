@@ -17,7 +17,7 @@ public class Chevalier : MonoBehaviour
     private void Start()
     {
         _boxCollider = this.GetComponent<BoxCollider>();
-        _meshRender = this.GetComponent<SpriteRenderer>();
+        _meshRender = this.GetComponentInChildren<SpriteRenderer>();
         _audioSource.clip = _clip;
         _playerScore.NbKnights += 1;
     }
