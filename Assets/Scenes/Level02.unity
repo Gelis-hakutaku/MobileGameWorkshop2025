@@ -1923,6 +1923,10 @@ PrefabInstance:
       propertyPath: m_RenderPostProcessing
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8504110383395813158, guid: 4affae8dabc788541b1c5ebd47124bd4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.46
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7422607111425268932, guid: 4affae8dabc788541b1c5ebd47124bd4, type: 3}
