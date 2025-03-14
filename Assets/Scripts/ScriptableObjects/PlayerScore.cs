@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.SceneManagement;
+using System;
 
 [CreateAssetMenu(fileName = "PlayerScore", menuName = "Scriptable Objects/PlayerScore")]
 public class PlayerScore : ScriptableObject
@@ -14,14 +15,30 @@ public class PlayerScore : ScriptableObject
     [SerializeField] int _blockPoints;
     [SerializeField] int _knightPoint;
 
+    private int _nbKnights;
     private int _score;
     private int[] _highscores;
     private bool[] _isLevelLocked;
+
+    public event Action OnAllKnightsDead;
 
     public int Score
     {
         get => _score;
         set => _score = value;
+    }
+
+    public int NbKnights
+    {
+        get => _nbKnights;
+        set 
+        { 
+            _nbKnights = value;
+            if (NbKnights <= 0)
+            {
+                OnAllKnightsDead?.Invoke();
+            }
+        }
     }
 
     public int[] Highscores
@@ -58,6 +75,7 @@ public class PlayerScore : ScriptableObject
     public void ResetScore()
     {
         _score = 0;
+        _nbKnights = 0;
     }
 
     public void AddPoints(int value)
@@ -65,6 +83,8 @@ public class PlayerScore : ScriptableObject
         Score += value;
         Debug.Log(Score);
     }
+
+
 
     public void SetHighscore(int currentLevel)
     {
