@@ -5,6 +5,9 @@ public class ProjectileBlast : MonoBehaviour
     [SerializeField] private Collider Collider;
     [SerializeField] private GameObject explosionVFX;
 
+    private AudioSource audioS;
+    [SerializeField] private AudioClip explosion;
+
     [Header("BlastStats")]
     [SerializeField] private float blastRadius = 5f;
     [SerializeField] private float blastForce = 700f;
@@ -12,6 +15,11 @@ public class ProjectileBlast : MonoBehaviour
     [Header("CameraShake")]
     [SerializeField] private float cameraShakeDuration = .35f;
     [SerializeField] private float cameraShakeIntensity = .5f;
+
+    private void Start()
+    {
+        audioS = GetComponent<AudioSource>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -27,7 +35,11 @@ public class ProjectileBlast : MonoBehaviour
 
         Instantiate(explosionVFX, transform.position, Quaternion.identity);
         Camera.main.GetComponent<CameraShake>().ShakeCamera(cameraShakeDuration, cameraShakeIntensity);
+        audioS.PlayOneShot(explosion);
 
-        Destroy(gameObject);
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        gameObject.GetComponent<SphereCollider>().enabled = false;
+
+        Destroy(gameObject, 3f);
     }
 }
