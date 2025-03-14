@@ -1,0 +1,8 @@
+C:/Users/solit/Documents/unityproject/MobileGameWorkshop2025/.utmp/RelWithDebInfo/6g3r6a2u/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/solit/Documents/unityproject/MobileGameWorkshop2025/.utmp/RelWithDebInfo/6g3r6a2u/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+C:/Users/solit/Documents/unityproject/MobileGameWorkshop2025/.utmp/RelWithDebInfo/6g3r6a2u/armeabi-v7a/GameActivity/CMakeFiles/game.dir
+C:/Users/solit/Documents/unityproject/MobileGameWorkshop2025/.utmp/RelWithDebInfo/6g3r6a2u/armeabi-v7a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/solit/Documents/unityproject/MobileGameWorkshop2025/.utmp/RelWithDebInfo/6g3r6a2u/armeabi-v7a/GameActivity/CMakeFiles/rebuild_cache.dir
+C:/Users/solit/Documents/unityproject/MobileGameWorkshop2025/.utmp/RelWithDebInfo/6g3r6a2u/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/solit/Documents/unityproject/MobileGameWorkshop2025/.utmp/RelWithDebInfo/6g3r6a2u/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/solit/Documents/unityproject/MobileGameWorkshop2025/.utmp/RelWithDebInfo/6g3r6a2u/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir
