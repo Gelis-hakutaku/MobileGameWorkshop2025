@@ -3,6 +3,7 @@ using UnityEngine;
 public class RotateSpriteToCam : MonoBehaviour
 {
     [SerializeField] private Camera _mainCamera;
+    [SerializeField] private Transform _spriteTransform;
 
     void LateUpdate()
     {
@@ -10,9 +11,9 @@ public class RotateSpriteToCam : MonoBehaviour
 
         cameraPosition.y = transform.position.y;
 
-        transform.LookAt(cameraPosition);
+        _spriteTransform.LookAt(cameraPosition);
 
-        transform.Rotate(0f, 180f, 0f);
+        _spriteTransform.Rotate(0f, 180f, 0f);
 
     }
 }

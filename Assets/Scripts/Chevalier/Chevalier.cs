@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -5,10 +6,12 @@ using UnityEngine.Audio;
 public class Chevalier : MonoBehaviour
 {
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _clip;
     [SerializeField] private ParticleSystem _particleSystem;
-    [SerializeField] private GameObject _chevalierCount;
+    //[SerializeField] private ChevalierCount _chevalierCountScript;
+    [SerializeField] private PlayerScore _playerScore;
 
-    private ChevalierCount _chevalierCountScript;
+    
     private BoxCollider _boxCollider;
     private SpriteRenderer _meshRender;
 
@@ -16,7 +19,7 @@ public class Chevalier : MonoBehaviour
     {
         _boxCollider = this.GetComponent<BoxCollider>();
         _meshRender = this.GetComponent<SpriteRenderer>();
-        _chevalierCountScript = _chevalierCount.GetComponent<ChevalierCount>();
+        _audioSource.clip = _clip;
     }
 
     void OnCollisionEnter(Collision collision)
@@ -28,9 +31,16 @@ public class Chevalier : MonoBehaviour
             _meshRender.enabled = false;
             _audioSource.Play();
             _particleSystem.Play();
+            StartCoroutine(WaitBeforeDeath());
             //Score??
-            _chevalierCountScript._nbrChevalier--;
+            _playerScore.AddPoints(_playerScore.KnightPoint);
         }
+    }
+
+    IEnumerator WaitBeforeDeath()
+    {
+        yield return new WaitForSeconds(_clip.length);
+        Destroy(gameObject);
     }
 }
 
